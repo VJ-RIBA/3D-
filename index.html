@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PAÇO DOS LEÕES - Visualizador 3D + AR</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    html,body{height:100%;margin:0;background:#111;color:#fff;font-family:Inter, Arial, Helvetica, sans-serif}
+    .wrap{display:flex;flex-direction:column;height:100vh}
+    header{padding:12px 16px;background:#0b0b0b;display:flex;align-items:center;justify-content:center}
+    header h1{margin:0;font-size:16px}
+    model-viewer{flex:1;width:100%;height:calc(100vh - 88px);background:#222;display:block}
+    footer{padding:12px 16px;background:#0a0a0a;font-size:14px}
+    .note{opacity:0.9}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header><h1>PAÇO DOS LEÕES — Visualizador 3D + AR</h1></header>
+
+    <model-viewer id="viewer"
+                  src="model.glb"
+                  alt="PAÇO DOS LEÕES - Modelo 3D"
+                  camera-controls
+                  interaction-prompt="auto"
+                  exposure="1"
+                  loading="eager"
+                  ar
+                  ar-modes="webxr scene-viewer quick-look"
+                  ios-src="model.usdz">
+    </model-viewer>
+
+    <footer>
+      <div class="note">Use um dedo para girar, dois dedos para aproximar. Para AR: Android usa Scene Viewer/WebXR automaticamente; iOS Quick Look precisa de <code>model.usdz</code> (não incluído).</div>
+    </footer>
+  </div>
+</body>
+</html>
