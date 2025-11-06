@@ -3,36 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PAÇO DOS LEÕES - Visualizador 3D + AR</title>
+  <title>STAGE 3D - PAÇO DOS LEÕES</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
-    html,body{height:100%;margin:0;background:#111;color:#fff;font-family:Inter, Arial, Helvetica, sans-serif}
+    html,body{height:100%;margin:0;background:#0b0b0b;color:#fff;font-family:'Inter',sans-serif}
     .wrap{display:flex;flex-direction:column;height:100vh}
-    header{padding:12px 16px;background:#0b0b0b;display:flex;align-items:center;justify-content:center}
-    header h1{margin:0;font-size:16px}
-    model-viewer{flex:1;width:100%;height:calc(100vh - 88px);background:#222;display:block}
-    footer{padding:12px 16px;background:#0a0a0a;font-size:14px}
-    .note{opacity:0.9}
+    header{padding:12px 16px;text-align:center;background:#111;border-bottom:1px solid #222}
+    header h1{margin:0;font-size:16px;letter-spacing:0.5px}
+    model-viewer{flex:1;width:100%;height:calc(100vh - 80px);background:#000;display:block}
+    footer{padding:10px;text-align:center;background:#111;font-size:13px;color:#ccc}
+    code{color:#bbb}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header><h1>PAÇO DOS LEÕES — Visualizador 3D + AR</h1></header>
+    <header><h1>STAGE 3D - PAÇO DOS LEÕES</h1></header>
 
-    <model-viewer id="viewer"
-                  src="model.glb"
-                  alt="PAÇO DOS LEÕES - Modelo 3D"
-                  camera-controls
-                  interaction-prompt="auto"
-                  exposure="1"
-                  loading="eager"
+    <model-viewer src="model.glb"
+                  alt="STAGE 3D - PAÇO DOS LEÕES"
                   ar
                   ar-modes="webxr scene-viewer quick-look"
-                  ios-src="model.usdz">
+                  camera-controls
+                  auto-rotate
+                  interaction-prompt="auto"
+                  exposure="1.1"
+                  shadow-intensity="1">
     </model-viewer>
 
     <footer>
-      <div class="note">Use um dedo para girar, dois dedos para aproximar. Para AR: Android usa Scene Viewer/WebXR automaticamente; iOS Quick Look precisa de <code>model.usdz</code> (não incluído).</div>
+      Toque e arraste para girar • Use dois dedos para zoom • AR disponível em dispositivos compatíveis
     </footer>
   </div>
 </body>
